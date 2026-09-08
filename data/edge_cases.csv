@@ -1,0 +1,8 @@
+batch_id,medicine_code,medicine_name,medicine_category,source_location,quantity,unit_value,expiry_date,avg_daily_demand,destination_location,destination_daily_demand,transfer_distance_km,temperature_sensitive,data_quality_score,expected_outcome
+EDGE-001,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,80.0,385.0,,1.0,Clinic-C,4.0,58.0,True,45.0,BLOCKED (Missing expiry date)
+EDGE-002,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-B,-25.0,78.5,2026-09-27,2.0,Clinic-D,5.0,74.0,True,50.0,BLOCKED (Negative quantity)
+EDGE-003,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,90.0,42.0,2026-09-29,1.0,Clinic-B,,24.0,False,72.0,WARNING (Confidence reduced due to missing demand)
+EDGE-004,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-C,40.0,420.0,2026-08-28,1.5,Clinic-A,3.0,58.0,True,95.0,BLOCKED / NO TRANSFER (Already expired)
+EDGE-005,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-D,100.0,310.0,2026-09-22,1.0,Clinic-E,2.0,65.0,True,98.0,Transfer quantity capped to 30 units (destination capacity)
+EDGE-006,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-A,70.0,295.0,2026-09-25,0.5,Clinic-E,4.0,290.0,True,92.0,Low location score and cold-chain risk penalty
+EDGE-007,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,50.0,450.0,2026-09-19,0.5,Clinic-C,0.0,38.0,True,94.0,NO ACTION / Zero transfer quantity recommended

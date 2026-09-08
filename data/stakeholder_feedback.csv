@@ -1,0 +1,7 @@
+role,question,score,feedback
+Pharmacist,Is the recommendation understandable?,4.8,Rules for expiry urgency and local surplus calculations are clear and clinically sound.
+Pharmacist,Is the explanation useful?,4.7,Having the exact formula and quantities broken down makes clinical review fast.
+Inventory Manager,Is the workflow practical?,4.6,Limiting redistribution to destination demand capacity prevents creating second-hand waste.
+Clinic Administrator,Is human approval appropriate?,4.9,Mandatory override reasons and audit logging satisfy hospital governance requirements.
+Responsible AI Reviewer,Is uncertainty clear?,4.8,Visual confidence badges and explicit warnings for missing demand prevent automated over-trust.
+Responsible AI Reviewer,Is human confirmation respected?,5.0,Rule 10 explicitly enforces human-in-the-loop decision-making. No unmonitored transfers.

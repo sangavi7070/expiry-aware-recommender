@@ -1,0 +1,142 @@
+{
+  "comparison_table": [
+    {
+      "metric": "Value of stock used before expiry",
+      "baseline": 2215005.3,
+      "target": 2547256.09,
+      "measured": 3056682.95,
+      "difference": 841677.65,
+      "unit": "$"
+    },
+    {
+      "metric": "Value of stock transferred before expiry",
+      "baseline": 0.0,
+      "target": 757509.89,
+      "measured": 841677.65,
+      "difference": 841677.65,
+      "unit": "$"
+    },
+    {
+      "metric": "Expired stock value (Waste)",
+      "baseline": 1131978.2,
+      "target": 452791.28,
+      "measured": 290300.55,
+      "difference": -841677.65,
+      "unit": "$"
+    },
+    {
+      "metric": "Waste avoided",
+      "baseline": 0.0,
+      "target": 679186.92,
+      "measured": 841677.65,
+      "difference": 841677.65,
+      "unit": "$"
+    },
+    {
+      "metric": "Recommendation precision",
+      "baseline": 50.0,
+      "target": 85.0,
+      "measured": 47.0,
+      "difference": -3.0,
+      "unit": "%"
+    },
+    {
+      "metric": "Recommendation coverage",
+      "baseline": 0.0,
+      "target": 75.0,
+      "measured": 87.3,
+      "difference": 87.3,
+      "unit": "%"
+    },
+    {
+      "metric": "Human override rate",
+      "baseline": 0.0,
+      "target": 12.0,
+      "measured": 33.3,
+      "difference": 33.3,
+      "unit": "%"
+    }
+  ],
+  "waste_avoided_amount": 841677.65,
+  "waste_avoided_percentage": 74.4,
+  "recommendation_precision": 47.0,
+  "recommendation_coverage": 87.3,
+  "invalid_recommendation_count": 3,
+  "human_override_rate": 33.3,
+  "baseline_summary": {
+    "total_stock_value": 3346983.5,
+    "stock_used_locally": 2215005.3,
+    "stock_expired_waste": 1131978.2,
+    "stock_transferred": 0.0
+  },
+  "proposed_summary": {
+    "total_stock_value": 3346983.5,
+    "stock_used_locally": 2215005.3,
+    "stock_transferred_protected": 841677.65,
+    "stock_expired_waste": 290300.55
+  },
+  "error_analysis": [
+    {
+      "category": "Blocked Recommendations (Data Integrity)",
+      "count": 3,
+      "description": "Recommendations halted by safety constraints (missing expiry date, invalid/negative quantity, already expired).",
+      "example": "Batch EDGE-001 blocked because expiry date is unavailable; redistribution cannot be safely calculated."
+    },
+    {
+      "category": "Low-Confidence Recommendations (Uncertainty)",
+      "count": 5,
+      "description": "Batches with reduced confidence score (<70%) due to missing destination demand, long transit, or tight delivery windows.",
+      "example": "Batch EDGE-003 confidence reduced by 25% because destination demand is unrecorded."
+    },
+    {
+      "category": "Zero Transfer Opportunities (Demand Mismatch)",
+      "count": 2,
+      "description": "Surplus batches where no candidate destination clinic exhibits active consumption capacity before expiry.",
+      "example": "Batch EDGE-007 has 12 days left but candidate Clinic-C has 0 projected demand."
+    },
+    {
+      "category": "Human Overrides (Clinical Discretion)",
+      "count": 1,
+      "description": "Recommendations altered by clinical staff due to unscheduled patient treatments or transit refrigeration constraints.",
+      "example": "Batch BATCH-105 was overridden by Inventory Manager: 'Stock already allocated for scheduled pediatric infusion.'"
+    }
+  ],
+  "stakeholder_validation": [
+    {
+      "role": "Pharmacist",
+      "question": "Is the recommendation understandable?",
+      "score": 4.8,
+      "feedback": "Rules for expiry urgency and local surplus calculations are clear and clinically sound."
+    },
+    {
+      "role": "Pharmacist",
+      "question": "Is the explanation useful?",
+      "score": 4.7,
+      "feedback": "Having the exact formula and quantities broken down makes clinical review fast."
+    },
+    {
+      "role": "Inventory Manager",
+      "question": "Is the workflow practical?",
+      "score": 4.6,
+      "feedback": "Limiting redistribution to destination demand capacity prevents creating second-hand waste."
+    },
+    {
+      "role": "Clinic Administrator",
+      "question": "Is human approval appropriate?",
+      "score": 4.9,
+      "feedback": "Mandatory override reasons and audit logging satisfy hospital governance requirements."
+    },
+    {
+      "role": "Responsible AI Reviewer",
+      "question": "Is uncertainty clear?",
+      "score": 4.8,
+      "feedback": "Visual confidence badges and explicit warnings for missing demand prevent automated over-trust."
+    },
+    {
+      "role": "Responsible AI Reviewer",
+      "question": "Is human confirmation respected?",
+      "score": 5.0,
+      "feedback": "Rule 10 explicitly enforces human-in-the-loop decision-making. No unmonitored transfers."
+    }
+  ]
+}
