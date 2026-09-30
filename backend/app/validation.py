@@ -20,28 +20,33 @@ def validate_inventory_record(record: Dict[str, Any], reference_date: date = Non
     is_blocked = False
     has_warning = False
 
-    # 1. Batch ID check
+    # 1. Batch ID check (Traceability Boundary)
+    # Required for legal pharmaceutical custody and recall tracking across facilities.
     batch_id = record.get("batch_id")
     if not batch_id or str(batch_id).strip() == "":
         is_blocked = True
         reasons.append("Batch ID is missing. Record cannot be tracked.")
         flags["missing_batch_id"] = True
 
-    # 2. Medicine code check
+    # 2. Medicine code check (Formulation Identification Boundary)
+    # Prevents drug administration errors by demanding unambiguous product catalog mapping.
     med_code = record.get("medicine_code")
     if not med_code or str(med_code).strip() == "":
         is_blocked = True
         reasons.append("Medicine code is missing. Item identification impossible.")
         flags["missing_medicine_code"] = True
 
-    # 3. Source location check
+    # 3. Source location check (Chain of Custody Boundary)
+    # Required to determine courier pickup dispatch origin and compute transit mileage.
     source_loc = record.get("source_location")
     if not source_loc or str(source_loc).strip() == "":
         is_blocked = True
         reasons.append("Source location is unavailable. Origin must be known.")
         flags["missing_source_location"] = True
 
-    # 4. Expiry date check
+    # 4. Expiry date check (Patient Safety & Legal Compliance Boundary - Rule 5 & Rule 9)
+    # Missing date: Urgency calculation is mathematically impossible; fail-closed.
+    # Already expired: Prohibited under Good Distribution Practice (GDP) standards.
     expiry_raw = record.get("expiry_date")
     parsed_expiry = None
     if not expiry_raw or str(expiry_raw).strip() == "" or str(expiry_raw).lower() in ("nan", "none", "null"):
@@ -63,7 +68,9 @@ def validate_inventory_record(record: Dict[str, Any], reference_date: date = Non
             reasons.append(f"Invalid expiry date format ('{expiry_raw}'). Expected YYYY-MM-DD.")
             flags["invalid_expiry_date"] = True
 
-    # 5. Quantity checks
+    # 5. Quantity checks (Physical Ledger Integrity Boundary - Rule 6)
+    # Negative quantity: Ledger corruption; cannot physically redistribute negative units.
+    # Zero quantity: Depleted stock; no physical units to transfer.
     qty = record.get("quantity")
     if qty is None or str(qty).lower() in ("nan", "none", "null"):
         is_blocked = True
@@ -85,7 +92,8 @@ def validate_inventory_record(record: Dict[str, Any], reference_date: date = Non
             reasons.append(f"Quantity is non-numeric: '{qty}'.")
             flags["invalid_quantity"] = True
 
-    # 6. Unit value checks
+    # 6. Unit value checks (Financial Audit Boundary)
+    # Negative valuation: Corrupts inventory ledger and evaluation calculations.
     unit_val = record.get("unit_value")
     if unit_val is None or str(unit_val).lower() in ("nan", "none", "null"):
         has_warning = True
@@ -103,7 +111,9 @@ def validate_inventory_record(record: Dict[str, Any], reference_date: date = Non
             reasons.append(f"Unit value is non-numeric: '{unit_val}'.")
             flags["invalid_unit_value"] = True
 
-    # 7. Demand checks
+    # 7. Demand checks (Uncertainty Boundary - Rule 7)
+    # Missing demand does NOT halt visibility (fail-soft), but reduces confidence
+    # and signals staff to manually confirm destination absorption capacity.
     dest_demand = record.get("destination_daily_demand")
     if dest_demand is None or str(dest_demand).lower() in ("nan", "none", "null"):
         has_warning = True

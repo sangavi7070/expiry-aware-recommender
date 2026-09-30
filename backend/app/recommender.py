@@ -12,7 +12,12 @@ from .explanation import generate_explanation
 
 
 def compute_days_to_expiry(expiry_str: str, reference_date: date = None) -> int:
-    """Compute days remaining until expiry date."""
+    """Compute days remaining until expiry date.
+
+    Why this logic exists:
+    A batch's shelf-life countdown dictates urgency. If the date string is malformed
+    or missing, returning -9999 acts as an explicit sentinel that triggers safety blocks.
+    """
     if reference_date is None:
         reference_date = date.today()
     try:
@@ -23,7 +28,14 @@ def compute_days_to_expiry(expiry_str: str, reference_date: date = None) -> int:
 
 
 def score_expiry(days_to_expiry: int) -> Tuple[float, str]:
-    """Score urgency based on days to expiry."""
+    """Score urgency based on days to expiry (Weight: 35%).
+
+    Why this logic exists:
+    Specialty medicines within 30 days of expiry face immediate discard unless routed
+    to higher-volume clinics. The scoring tiered curve applies a steep acceleration
+    (88-100 pts) for batches <= 30 days, prioritizing them over stable (>90d) stock.
+    Already-expired medicines (<=0d) receive 0.0 to prevent illegal redistribution.
+    """
     if days_to_expiry <= 0:
         return 0.0, "EXPIRED"
     elif days_to_expiry <= 15:
@@ -40,7 +52,13 @@ def score_expiry(days_to_expiry: int) -> Tuple[float, str]:
 
 
 def score_surplus(quantity: float, days_to_expiry: int, avg_daily_demand: float) -> Tuple[float, float, bool]:
-    """Score source clinic surplus based on local expected demand until expiry.
+    """Score source clinic surplus based on local expected demand until expiry (Weight: 25%).
+
+    Why this logic exists:
+    Redistribution must NEVER create an artificial shortage at the source clinic.
+    Projected local consumption = days_to_expiry * avg_daily_demand.
+    Only stock in excess of local patient needs is classified as surplus. If local
+    demand will consume the entire batch before expiry, surplus is 0 and transfer is unnecessary.
     Returns: (surplus_score, surplus_quantity, is_surplus)
     """
     if days_to_expiry <= 0 or quantity <= 0:
@@ -64,7 +82,15 @@ def score_surplus(quantity: float, days_to_expiry: int, avg_daily_demand: float)
 
 
 def score_demand(days_to_expiry: int, dest_demand: float, surplus_qty: float) -> Tuple[float, float, str]:
-    """Score candidate destination clinic demand.
+    """Score candidate destination clinic demand (Weight: 25%).
+
+    Why this logic exists:
+    A transfer recommendation is clinically useless unless the recipient clinic
+    has verified ongoing patient treatments requiring the formulation.
+    Expected destination capacity = days_to_expiry * dest_demand.
+    If destination demand is zero or negative, the clinic is marked ineligible.
+    If demand data is unavailable (None), a baseline fallback score (35.0) is
+    used while triggering Rule 7 uncertainty warnings in downstream logic.
     Returns: (demand_score, expected_dest_capacity, demand_level)
     """
     if dest_demand is None:
@@ -90,7 +116,19 @@ def score_demand(days_to_expiry: int, dest_demand: float, surplus_qty: float) ->
 
 
 def score_location(distance_km: float, temperature_sensitive: bool) -> Tuple[float, str]:
-    """Score transfer logistics feasibility based on distance and cold chain requirements."""
+    """Score transfer logistics feasibility based on distance and cold chain requirements (Weight: 10%).
+
+    Why this logic exists:
+    Transferring biologics across long highway routes introduces cold-chain vulnerability
+    and elevated transport costs. Distance is discretized into feasibility tiers:
+      - <= 30 km:  100 pts (EXCELLENT local intradistrict transit)
+      - <= 100 km:  85 pts (HIGH regional transit, Rule 4)
+      - <= 180 km:  55 pts (MODERATE intercity transit)
+      - <= 250 km:  30 pts (CHALLENGING long haul)
+      - > 250 km:   15 pts (POOR logistics feasibility)
+    For cold-chain biologics (2°C - 8°C), an extra 20-point penalty is assessed if
+    transit exceeds 100 km to reflect thermal container hold-time limits.
+    """
     if distance_km is None or distance_km < 0:
         return 50.0, "UNKNOWN"
 
@@ -238,11 +276,18 @@ def evaluate_batch(record: Dict[str, Any], reference_date: date = None) -> Dict[
     else:
         rules_triggered.append(f"Logistics notice: Transit distance ({distance_km:.0f} km) exceeds 100 km.")
 
-    # Factor 5: Data quality score
+    # Factor 5: Data quality score (Weight: 5%)
+    # Rewards records with complete attributes, clean date formats, and verified ledger tracking.
     dq_score_val = max(min(data_quality, 100.0), 0.0)
 
-    # Multi-factor formula:
-    # risk_score = 0.35 * expiry_score + 0.25 * surplus_score + 0.25 * demand_score + 0.10 * location_score + 0.05 * data_quality_score
+    # Multi-Factor Explainable Scoring Formula:
+    # ------------------------------------------
+    # Weights sum to 100% and balance clinical urgency against operational feasibility:
+    #   - 35% Expiry Urgency: Primary clinical priority — preventing imminent drug expiry.
+    #   - 25% Source Surplus: Ensures origin clinic has authentic excess beyond its own patient needs.
+    #   - 25% Destination Demand: Ensures recipient facility has genuine capacity to consume before expiry.
+    #   - 10% Location Logistics: Favors local/regional transfers and protects cold-chain viability.
+    #   -  5% Data Quality: Penalizes incomplete ledger entries to discourage decision-making on dirty data.
     overall_risk_score = (
         0.35 * exp_score +
         0.25 * surplus_score_val +
@@ -252,8 +297,13 @@ def evaluate_batch(record: Dict[str, Any], reference_date: date = None) -> Dict[
     )
     overall_risk_score = round(max(min(overall_risk_score, 100.0), 0.0), 1)
 
-    # Transfer quantity calculation:
-    # RULE 8: Never recommend transferring more than destination demand requires
+    # Transfer Quantity Calculation & Rule 8 Capping:
+    # -----------------------------------------------
+    # RULE 8: Never recommend transferring more than destination demand requires.
+    # Formula: Transfer Qty = min(Surplus Qty, Destination Capacity, Total Available Stock)
+    # Why this logic exists:
+    # Transferring excess units beyond what the destination clinic can administer would
+    # merely shift the expiration event from one clinic to another ("secondary waste").
     if surplus_qty > 0 and dest_capacity > 0:
         recommended_transfer_qty = min(surplus_qty, dest_capacity, qty)
         rules_triggered.append(
@@ -267,11 +317,13 @@ def evaluate_batch(record: Dict[str, Any], reference_date: date = None) -> Dict[
         elif dest_capacity <= 0:
             rules_triggered.append("Transfer quantity zero: Destination clinic has no projected demand capacity.")
 
-    # Determine Priority Band
-    # 80-100: HIGH PRIORITY
-    # 60-79: MEDIUM PRIORITY
-    # 40-59: LOW PRIORITY
-    # Below 40: NO ACTION
+    # Determine Priority Band:
+    # ------------------------
+    # Stratifies recommendations for clinical dispensary workflows:
+    #   - 80-100: HIGH PRIORITY   -> Immediate pharmacist review required (near-term expiry + high demand).
+    #   - 60-79:  MEDIUM PRIORITY -> Active candidate for scheduled weekly inter-facility transfers.
+    #   - 40-59:  LOW PRIORITY    -> Monitor local consumption; defer transfer unless demand shifts.
+    #   - Below 40: NO ACTION     -> Surplus absorbed locally or recipient capacity absent.
     if recommended_transfer_qty <= 0:
         priority = "NO ACTION"
     elif overall_risk_score >= 80.0:
@@ -283,7 +335,13 @@ def evaluate_batch(record: Dict[str, Any], reference_date: date = None) -> Dict[
     else:
         priority = "NO ACTION"
 
-    # Confidence calculation
+    # Uncertainty & Confidence Calibration:
+    # -------------------------------------
+    # Base confidence mirrors data quality score, but degrades deterministically
+    # when risk factors compound:
+    #   - Missing destination demand: -25 pts (clinical destination uncertainty).
+    #   - Cold-chain transit > 100 km: -15 pts (thermal container duration risk).
+    #   - Short delivery window <= 7 days: -10 pts (tight courier margin for error).
     conf = dq_score_val
     if dest_demand is None:
         conf -= 25.0
@@ -302,8 +360,11 @@ def evaluate_batch(record: Dict[str, Any], reference_date: date = None) -> Dict[
     else:
         conf_level = "LOW CONFIDENCE"
 
-    # Status
-    # RULE 10: Never automatically approve a transfer
+    # Status Assignment & Rule 10 Governance Mandate:
+    # ------------------------------------------------
+    # RULE 10: Never automatically approve a transfer.
+    # The system is strictly decision-support (assistive, not autonomous).
+    # Transfers require authorized human sign-off (Approve, Reject, or Override).
     rules_triggered.append("RULE 10: Transfer requires human clinical approval. System cannot execute autonomously.")
     if val_result.status == "WARNING":
         rec_status = "WARNING"
