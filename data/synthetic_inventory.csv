@@ -1,111 +1,111 @@
 batch_id,medicine_code,medicine_name,medicine_category,source_location,quantity,unit_value,expiry_date,avg_daily_demand,destination_location,destination_daily_demand,transfer_distance_km,temperature_sensitive,data_quality_score,stock_value,days_to_expiry,potential_at_risk_value
-BATCH-101,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,134.0,420.0,2026-09-17,0.7,Clinic-D,6.0,92.0,True,96.4,56280.0,10,56280.0
-BATCH-102,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-D,69.0,32.5,2026-09-19,1.3,Clinic-A,3.1,92.0,False,93.6,2242.5,12,2242.5
-BATCH-103,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,31.0,450.0,2026-10-25,2.9,Clinic-B,2.5,74.0,True,92.2,13950.0,48,0.0
-BATCH-104,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,76.0,42.0,2026-10-10,0.6,Clinic-C,,38.0,False,77.7,3192.0,33,3192.0
-BATCH-105,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,51.0,32.5,2027-04-22,3.9,Clinic-A,1.9,58.0,False,95.5,1657.5,227,0.0
-BATCH-106,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,189.0,32.5,2026-12-17,2.1,Clinic-B,1.7,38.0,False,90.8,6142.5,101,0.0
-BATCH-107,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,146.0,310.0,2026-10-03,1.0,Clinic-E,4.5,145.0,True,93.7,45260.0,26,45260.0
-BATCH-108,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,71.0,42.0,2026-10-23,2.2,Clinic-C,2.8,58.0,False,97.3,2982.0,46,0.0
-BATCH-109,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,78.0,450.0,2026-12-20,3.6,Clinic-D,3.0,74.0,True,94.0,35100.0,104,0.0
-BATCH-110,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,90.0,420.0,2026-09-28,1.8,Clinic-D,5.6,74.0,True,93.1,37800.0,21,37800.0
-BATCH-111,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-B,249.0,78.5,2027-03-25,3.0,Clinic-D,1.9,74.0,True,100.0,19546.5,199,0.0
-BATCH-112,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,150.0,78.5,2026-09-14,0.7,Clinic-D,5.5,65.0,True,98.3,11775.0,7,11775.0
-BATCH-113,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-E,149.0,115.0,2026-11-15,2.3,Clinic-A,4.9,145.0,True,96.6,17135.0,69,0.0
-BATCH-114,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,48.0,385.0,2027-03-03,2.2,Clinic-D,1.4,92.0,True,90.0,18480.0,177,0.0
-BATCH-115,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,190.0,42.0,2026-10-14,1.7,Clinic-B,3.9,128.0,False,94.1,7980.0,37,7980.0
-BATCH-116,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-C,165.0,78.5,2026-11-26,3.3,Clinic-B,3.8,38.0,True,92.9,12952.5,80,0.0
-BATCH-117,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-C,152.0,420.0,2026-09-20,1.4,Clinic-D,3.3,46.0,True,97.9,63840.0,13,63840.0
-BATCH-118,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-E,110.0,420.0,2026-09-28,0.7,Clinic-B,5.1,128.0,True,96.9,46200.0,21,46200.0
-BATCH-119,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-E,191.0,310.0,2027-03-18,3.1,Clinic-B,2.1,128.0,True,95.2,59210.0,192,0.0
-BATCH-120,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,115.0,420.0,2026-09-13,1.3,Clinic-C,5.4,38.0,True,92.1,48300.0,6,48300.0
-BATCH-121,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-B,38.0,385.0,2027-02-28,2.8,Clinic-A,1.7,24.0,True,94.9,14630.0,174,0.0
-BATCH-122,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,143.0,450.0,2026-09-28,1.1,Clinic-E,3.4,128.0,True,97.3,64350.0,21,64350.0
-BATCH-123,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,43.0,295.0,2026-11-23,2.7,Clinic-E,5.0,65.0,True,89.0,12685.0,77,0.0
-BATCH-124,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-C,108.0,115.0,2026-09-19,1.2,Clinic-A,4.7,58.0,True,94.2,12420.0,12,12420.0
-BATCH-125,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,45.0,310.0,2027-04-25,1.6,Clinic-E,3.5,145.0,True,98.4,13950.0,230,0.0
-BATCH-126,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,84.0,420.0,2026-11-07,3.2,Clinic-C,4.7,38.0,True,89.6,35280.0,61,0.0
-BATCH-127,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-D,93.0,385.0,2027-04-01,2.6,Clinic-C,3.4,46.0,True,100.0,35805.0,206,0.0
-BATCH-128,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,47.0,450.0,2026-09-19,1.4,Clinic-B,5.2,74.0,True,98.0,21150.0,12,21150.0
-BATCH-129,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,165.0,385.0,2026-12-01,1.4,Clinic-E,4.9,145.0,True,88.8,63525.0,85,0.0
-BATCH-130,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,133.0,78.5,2026-10-23,1.3,Clinic-B,4.7,24.0,True,90.5,10440.5,46,0.0
-BATCH-131,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-A,174.0,32.5,2026-11-14,2.3,Clinic-B,4.8,24.0,False,90.0,5655.0,68,0.0
-BATCH-132,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,195.0,295.0,2026-11-19,1.7,Clinic-D,2.9,74.0,True,95.5,57525.0,73,0.0
-BATCH-133,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,55.0,420.0,2026-11-13,1.2,Clinic-E,2.6,145.0,True,90.7,23100.0,67,0.0
-BATCH-134,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-A,142.0,295.0,2026-10-18,3.1,Clinic-C,4.1,58.0,True,94.1,41890.0,41,41890.0
-BATCH-135,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,244.0,450.0,2027-01-01,1.8,Clinic-D,1.3,92.0,True,91.1,109800.0,116,0.0
-BATCH-136,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,131.0,450.0,2026-09-19,1.0,Clinic-D,5.7,74.0,True,98.8,58950.0,12,58950.0
-BATCH-137,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,43.0,450.0,2026-12-19,3.1,Clinic-C,3.1,46.0,True,90.4,19350.0,103,0.0
-BATCH-138,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,110.0,295.0,2026-09-27,1.6,Clinic-D,5.2,74.0,True,92.9,32450.0,20,32450.0
-BATCH-139,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,161.0,78.5,2027-05-04,1.9,Clinic-A,1.3,145.0,True,93.1,12638.5,239,0.0
-BATCH-140,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,56.0,385.0,2026-11-19,1.9,Clinic-B,3.7,38.0,True,96.7,21560.0,73,0.0
-BATCH-141,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-B,245.0,32.5,2027-01-20,2.5,Clinic-C,1.4,38.0,False,99.2,7962.5,135,0.0
-BATCH-142,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,53.0,115.0,2026-10-05,1.1,Clinic-D,3.2,74.0,True,95.8,6095.0,28,6095.0
-BATCH-143,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-D,88.0,310.0,2026-11-27,1.6,Clinic-C,4.0,46.0,True,92.0,27280.0,81,0.0
-BATCH-144,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,132.0,42.0,2026-11-09,2.7,Clinic-D,4.5,92.0,False,91.3,5544.0,63,0.0
-BATCH-145,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,44.0,385.0,2026-09-21,0.7,Clinic-D,4.7,92.0,True,97.8,16940.0,14,16940.0
-BATCH-146,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,78.0,295.0,2026-11-13,1.6,Clinic-A,4.1,92.0,True,88.0,23010.0,67,0.0
-BATCH-147,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,114.0,450.0,2026-11-19,2.6,Clinic-D,4.0,74.0,True,89.2,51300.0,73,0.0
-BATCH-148,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,133.0,42.0,2026-10-28,2.7,Clinic-C,3.7,95.0,False,89.9,5586.0,51,0.0
-BATCH-149,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,30.0,115.0,2026-11-30,1.8,Clinic-D,2.6,74.0,True,95.9,3450.0,84,0.0
-BATCH-150,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,84.0,32.5,2026-11-20,2.3,Clinic-E,4.4,95.0,False,97.6,2730.0,74,0.0
-BATCH-151,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,188.0,78.5,2026-11-17,1.8,Clinic-D,4.5,92.0,True,95.5,14758.0,71,0.0
-BATCH-152,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,71.0,42.0,2026-09-14,2.0,Clinic-C,5.4,38.0,False,98.1,2982.0,7,2982.0
-BATCH-153,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,146.0,165.0,2027-03-14,2.5,Clinic-B,1.4,74.0,True,96.9,24090.0,188,0.0
-BATCH-154,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,106.0,420.0,2026-10-05,1.2,Clinic-B,5.2,74.0,True,99.3,44520.0,28,44520.0
-BATCH-155,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,155.0,420.0,2027-05-25,4.0,Clinic-B,2.5,74.0,True,99.5,65100.0,260,0.0
-BATCH-156,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-E,134.0,165.0,2027-04-25,3.7,Clinic-D,2.9,65.0,True,94.7,22110.0,230,0.0
-BATCH-157,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,144.0,42.0,2027-04-18,3.1,Clinic-D,1.7,74.0,False,90.8,6048.0,223,0.0
-BATCH-158,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,168.0,42.0,2026-12-04,1.2,Clinic-D,2.5,74.0,False,91.8,7056.0,88,0.0
-BATCH-159,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-B,168.0,78.5,2026-10-29,2.2,Clinic-A,2.2,24.0,True,96.3,13188.0,52,0.0
-BATCH-160,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-E,117.0,115.0,2027-05-02,2.7,Clinic-A,3.4,145.0,True,93.0,13455.0,237,0.0
-BATCH-161,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,141.0,115.0,2026-10-25,2.2,Clinic-B,3.2,74.0,True,94.7,16215.0,48,0.0
-BATCH-162,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,156.0,115.0,2027-05-14,1.6,Clinic-E,2.0,128.0,True,95.6,17940.0,249,0.0
-BATCH-163,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,63.0,385.0,2026-09-27,0.6,Clinic-E,4.5,145.0,True,93.7,24255.0,20,24255.0
-BATCH-164,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-C,72.0,295.0,2026-09-26,1.8,Clinic-E,4.9,95.0,True,98.0,21240.0,19,21240.0
-BATCH-165,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,196.0,385.0,2026-11-26,1.1,Clinic-B,2.1,38.0,True,90.5,75460.0,80,0.0
-BATCH-166,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,125.0,385.0,2026-09-28,0.7,Clinic-B,6.8,128.0,True,95.7,48125.0,21,48125.0
-BATCH-167,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,59.0,42.0,2026-11-24,2.9,Clinic-B,2.5,38.0,False,91.1,2478.0,78,0.0
-BATCH-168,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-A,126.0,32.5,2026-12-05,2.0,Clinic-D,4.1,92.0,False,88.8,4095.0,89,0.0
-BATCH-169,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,226.0,310.0,2027-05-08,1.8,Clinic-D,3.5,92.0,True,97.8,70060.0,243,0.0
-BATCH-170,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-E,159.0,295.0,2026-10-12,2.6,Clinic-D,2.0,65.0,True,92.2,46905.0,35,46905.0
-BATCH-171,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-A,89.0,165.0,2026-10-18,0.9,Clinic-E,0.0,145.0,True,79.5,14685.0,41,14685.0
-BATCH-172,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,181.0,42.0,2026-11-29,1.7,Clinic-D,4.6,65.0,False,96.3,7602.0,83,0.0
-BATCH-173,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-C,112.0,420.0,2026-09-27,1.4,Clinic-E,4.5,95.0,True,92.2,47040.0,20,47040.0
-BATCH-174,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,83.0,295.0,2026-09-21,0.9,Clinic-E,5.4,128.0,True,99.0,24485.0,14,24485.0
-BATCH-175,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,92.0,450.0,2026-10-06,1.2,Clinic-C,6.0,58.0,True,97.5,41400.0,29,41400.0
-BATCH-176,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,91.0,165.0,2026-09-20,1.5,Clinic-A,4.2,92.0,True,96.7,15015.0,13,15015.0
-BATCH-177,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-E,170.0,165.0,2026-11-24,1.8,Clinic-C,4.1,95.0,True,90.7,28050.0,78,0.0
-BATCH-178,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,50.0,42.0,2027-02-24,3.4,Clinic-A,3.4,24.0,False,96.9,2100.0,170,0.0
-BATCH-179,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-B,137.0,310.0,2026-10-01,1.3,Clinic-E,4.1,128.0,True,92.8,42470.0,24,42470.0
-BATCH-180,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-C,33.0,310.0,2026-10-27,2.8,Clinic-B,2.4,38.0,True,88.5,10230.0,50,0.0
-BATCH-181,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,193.0,385.0,2026-10-16,3.2,Clinic-C,3.5,95.0,True,96.7,74305.0,39,74305.0
-BATCH-182,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,77.0,32.5,2026-10-29,3.4,Clinic-E,2.8,95.0,False,96.6,2502.5,52,0.0
-BATCH-183,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,191.0,420.0,2026-11-13,2.7,Clinic-E,2.5,145.0,True,96.1,80220.0,67,0.0
-BATCH-184,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,93.0,42.0,2026-10-07,1.4,Clinic-C,6.2,58.0,False,93.8,3906.0,30,3906.0
-BATCH-185,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,240.0,450.0,2027-02-20,3.0,Clinic-E,2.1,65.0,True,95.7,108000.0,166,0.0
-BATCH-186,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,180.0,385.0,2027-01-28,2.0,Clinic-A,2.7,145.0,True,91.6,69300.0,143,0.0
-BATCH-187,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,97.0,78.5,2026-09-26,1.5,Clinic-A,4.9,145.0,True,92.3,7614.5,19,7614.5
-BATCH-188,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,158.0,42.0,2026-09-20,0.9,Clinic-E,6.2,95.0,False,96.7,6636.0,13,6636.0
-BATCH-189,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-D,68.0,310.0,2026-11-18,3.3,Clinic-A,4.5,92.0,True,88.7,21080.0,72,0.0
-BATCH-190,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-C,107.0,78.5,2026-11-06,2.7,Clinic-D,4.8,46.0,True,93.0,8399.5,60,0.0
-BATCH-191,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,140.0,165.0,2026-12-03,2.8,Clinic-A,3.8,92.0,True,88.3,23100.0,87,0.0
-BATCH-192,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-E,60.0,310.0,2026-10-06,1.3,Clinic-A,,145.0,True,72.8,18600.0,29,18600.0
-BATCH-193,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-C,175.0,165.0,2026-10-16,1.5,Clinic-B,,38.0,True,71.1,28875.0,39,28875.0
-BATCH-194,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-A,156.0,295.0,2026-11-21,1.7,Clinic-C,4.8,58.0,True,96.1,46020.0,75,0.0
-BATCH-195,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,81.0,450.0,2026-09-21,0.7,Clinic-E,6.1,145.0,True,98.9,36450.0,14,36450.0
-BATCH-196,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,162.0,385.0,2026-10-20,1.9,Clinic-D,4.3,65.0,True,94.3,62370.0,43,62370.0
-BATCH-197,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-B,142.0,385.0,2026-10-26,3.2,Clinic-D,3.5,74.0,True,88.3,54670.0,49,0.0
-BATCH-198,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-B,171.0,32.5,2026-10-08,2.0,Clinic-C,2.7,38.0,False,96.4,5557.5,31,5557.5
-BATCH-199,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,157.0,420.0,2026-10-17,3.3,Clinic-A,2.9,92.0,True,95.1,65940.0,40,65940.0
-BATCH-200,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,58.0,115.0,2026-09-30,1.1,Clinic-E,6.7,65.0,True,96.1,6670.0,23,6670.0
-BATCH-201,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,107.0,78.5,2027-03-22,3.8,Clinic-D,2.3,92.0,True,98.2,8399.5,196,0.0
-BATCH-202,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,157.0,42.0,2027-03-30,2.7,Clinic-E,1.8,95.0,False,97.6,6594.0,204,0.0
-BATCH-203,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,81.0,115.0,2027-06-02,2.9,Clinic-C,1.6,46.0,True,97.8,9315.0,268,0.0
-BATCH-204,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,118.0,385.0,2027-03-13,4.0,Clinic-E,3.0,95.0,True,96.5,45430.0,187,0.0
-BATCH-205,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-D,82.0,78.5,2026-10-01,1.8,Clinic-A,6.5,92.0,True,95.5,6437.0,24,6437.0
-BATCH-206,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,242.0,450.0,2027-03-20,3.1,Clinic-A,1.4,92.0,True,94.7,108900.0,194,0.0
-BATCH-207,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,114.0,42.0,2026-12-01,3.1,Clinic-E,4.6,95.0,False,91.8,4788.0,85,0.0
-BATCH-208,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,191.0,295.0,2026-10-23,2.7,Clinic-A,2.9,92.0,True,90.3,56345.0,46,0.0
-BATCH-209,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,243.0,420.0,2027-06-04,1.8,Clinic-A,1.4,92.0,True,93.0,102060.0,270,0.0
-BATCH-210,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,111.0,385.0,2027-02-19,2.4,Clinic-D,1.4,92.0,True,95.3,42735.0,165,0.0
+BATCH-101,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,134.0,420.0,2026-10-10,0.7,Clinic-D,6.0,92.0,True,96.4,56280.0,10,56280.0
+BATCH-102,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-D,69.0,32.5,2026-10-12,1.3,Clinic-A,3.1,92.0,False,93.6,2242.5,12,2242.5
+BATCH-103,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,31.0,450.0,2026-11-17,2.9,Clinic-B,2.5,74.0,True,92.2,13950.0,48,0.0
+BATCH-104,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,76.0,42.0,2026-11-02,0.6,Clinic-C,,38.0,False,77.7,3192.0,33,3192.0
+BATCH-105,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,51.0,32.5,2027-05-15,3.9,Clinic-A,1.9,58.0,False,95.5,1657.5,227,0.0
+BATCH-106,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,189.0,32.5,2027-01-09,2.1,Clinic-B,1.7,38.0,False,90.8,6142.5,101,0.0
+BATCH-107,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,146.0,310.0,2026-10-26,1.0,Clinic-E,4.5,145.0,True,93.7,45260.0,26,45260.0
+BATCH-108,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,71.0,42.0,2026-11-15,2.2,Clinic-C,2.8,58.0,False,97.3,2982.0,46,0.0
+BATCH-109,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,78.0,450.0,2027-01-12,3.6,Clinic-D,3.0,74.0,True,94.0,35100.0,104,0.0
+BATCH-110,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,90.0,420.0,2026-10-21,1.8,Clinic-D,5.6,74.0,True,93.1,37800.0,21,37800.0
+BATCH-111,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-B,249.0,78.5,2027-04-17,3.0,Clinic-D,1.9,74.0,True,100.0,19546.5,199,0.0
+BATCH-112,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,150.0,78.5,2026-10-07,0.7,Clinic-D,5.5,65.0,True,98.3,11775.0,7,11775.0
+BATCH-113,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-E,149.0,115.0,2026-12-08,2.3,Clinic-A,4.9,145.0,True,96.6,17135.0,69,0.0
+BATCH-114,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,48.0,385.0,2027-03-26,2.2,Clinic-D,1.4,92.0,True,90.0,18480.0,177,0.0
+BATCH-115,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,190.0,42.0,2026-11-06,1.7,Clinic-B,3.9,128.0,False,94.1,7980.0,37,7980.0
+BATCH-116,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-C,165.0,78.5,2026-12-19,3.3,Clinic-B,3.8,38.0,True,92.9,12952.5,80,0.0
+BATCH-117,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-C,152.0,420.0,2026-10-13,1.4,Clinic-D,3.3,46.0,True,97.9,63840.0,13,63840.0
+BATCH-118,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-E,110.0,420.0,2026-10-21,0.7,Clinic-B,5.1,128.0,True,96.9,46200.0,21,46200.0
+BATCH-119,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-E,191.0,310.0,2027-04-10,3.1,Clinic-B,2.1,128.0,True,95.2,59210.0,192,0.0
+BATCH-120,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,115.0,420.0,2026-10-06,1.3,Clinic-C,5.4,38.0,True,92.1,48300.0,6,48300.0
+BATCH-121,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-B,38.0,385.0,2027-03-23,2.8,Clinic-A,1.7,24.0,True,94.9,14630.0,174,0.0
+BATCH-122,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,143.0,450.0,2026-10-21,1.1,Clinic-E,3.4,128.0,True,97.3,64350.0,21,64350.0
+BATCH-123,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,43.0,295.0,2026-12-16,2.7,Clinic-E,5.0,65.0,True,89.0,12685.0,77,0.0
+BATCH-124,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-C,108.0,115.0,2026-10-12,1.2,Clinic-A,4.7,58.0,True,94.2,12420.0,12,12420.0
+BATCH-125,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,45.0,310.0,2027-05-18,1.6,Clinic-E,3.5,145.0,True,98.4,13950.0,230,0.0
+BATCH-126,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-B,84.0,420.0,2026-11-30,3.2,Clinic-C,4.7,38.0,True,89.6,35280.0,61,0.0
+BATCH-127,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-D,93.0,385.0,2027-04-24,2.6,Clinic-C,3.4,46.0,True,100.0,35805.0,206,0.0
+BATCH-128,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,47.0,450.0,2026-10-12,1.4,Clinic-B,5.2,74.0,True,98.0,21150.0,12,21150.0
+BATCH-129,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,165.0,385.0,2026-12-24,1.4,Clinic-E,4.9,145.0,True,88.8,63525.0,85,0.0
+BATCH-130,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,133.0,78.5,2026-11-15,1.3,Clinic-B,4.7,24.0,True,90.5,10440.5,46,0.0
+BATCH-131,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-A,174.0,32.5,2026-12-07,2.3,Clinic-B,4.8,24.0,False,90.0,5655.0,68,0.0
+BATCH-132,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,195.0,295.0,2026-12-12,1.7,Clinic-D,2.9,74.0,True,95.5,57525.0,73,0.0
+BATCH-133,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,55.0,420.0,2026-12-06,1.2,Clinic-E,2.6,145.0,True,90.7,23100.0,67,0.0
+BATCH-134,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-A,142.0,295.0,2026-11-10,3.1,Clinic-C,4.1,58.0,True,94.1,41890.0,41,41890.0
+BATCH-135,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,244.0,450.0,2027-01-24,1.8,Clinic-D,1.3,92.0,True,91.1,109800.0,116,0.0
+BATCH-136,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,131.0,450.0,2026-10-12,1.0,Clinic-D,5.7,74.0,True,98.8,58950.0,12,58950.0
+BATCH-137,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,43.0,450.0,2027-01-11,3.1,Clinic-C,3.1,46.0,True,90.4,19350.0,103,0.0
+BATCH-138,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,110.0,295.0,2026-10-20,1.6,Clinic-D,5.2,74.0,True,92.9,32450.0,20,32450.0
+BATCH-139,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,161.0,78.5,2027-05-27,1.9,Clinic-A,1.3,145.0,True,93.1,12638.5,239,0.0
+BATCH-140,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,56.0,385.0,2026-12-12,1.9,Clinic-B,3.7,38.0,True,96.7,21560.0,73,0.0
+BATCH-141,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-B,245.0,32.5,2027-02-12,2.5,Clinic-C,1.4,38.0,False,99.2,7962.5,135,0.0
+BATCH-142,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,53.0,115.0,2026-10-28,1.1,Clinic-D,3.2,74.0,True,95.8,6095.0,28,6095.0
+BATCH-143,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-D,88.0,310.0,2026-12-20,1.6,Clinic-C,4.0,46.0,True,92.0,27280.0,81,0.0
+BATCH-144,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,132.0,42.0,2026-12-02,2.7,Clinic-D,4.5,92.0,False,91.3,5544.0,63,0.0
+BATCH-145,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,44.0,385.0,2026-10-14,0.7,Clinic-D,4.7,92.0,True,97.8,16940.0,14,16940.0
+BATCH-146,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,78.0,295.0,2026-12-06,1.6,Clinic-A,4.1,92.0,True,88.0,23010.0,67,0.0
+BATCH-147,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-B,114.0,450.0,2026-12-12,2.6,Clinic-D,4.0,74.0,True,89.2,51300.0,73,0.0
+BATCH-148,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,133.0,42.0,2026-11-20,2.7,Clinic-C,3.7,95.0,False,89.9,5586.0,51,0.0
+BATCH-149,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,30.0,115.0,2026-12-23,1.8,Clinic-D,2.6,74.0,True,95.9,3450.0,84,0.0
+BATCH-150,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,84.0,32.5,2026-12-13,2.3,Clinic-E,4.4,95.0,False,97.6,2730.0,74,0.0
+BATCH-151,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,188.0,78.5,2026-12-10,1.8,Clinic-D,4.5,92.0,True,95.5,14758.0,71,0.0
+BATCH-152,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,71.0,42.0,2026-10-07,2.0,Clinic-C,5.4,38.0,False,98.1,2982.0,7,2982.0
+BATCH-153,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,146.0,165.0,2027-04-06,2.5,Clinic-B,1.4,74.0,True,96.9,24090.0,188,0.0
+BATCH-154,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,106.0,420.0,2026-10-28,1.2,Clinic-B,5.2,74.0,True,99.3,44520.0,28,44520.0
+BATCH-155,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,155.0,420.0,2027-06-17,4.0,Clinic-B,2.5,74.0,True,99.5,65100.0,260,0.0
+BATCH-156,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-E,134.0,165.0,2027-05-18,3.7,Clinic-D,2.9,65.0,True,94.7,22110.0,230,0.0
+BATCH-157,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,144.0,42.0,2027-05-11,3.1,Clinic-D,1.7,74.0,False,90.8,6048.0,223,0.0
+BATCH-158,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,168.0,42.0,2026-12-27,1.2,Clinic-D,2.5,74.0,False,91.8,7056.0,88,0.0
+BATCH-159,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-B,168.0,78.5,2026-11-21,2.2,Clinic-A,2.2,24.0,True,96.3,13188.0,52,0.0
+BATCH-160,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-E,117.0,115.0,2027-05-25,2.7,Clinic-A,3.4,145.0,True,93.0,13455.0,237,0.0
+BATCH-161,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,141.0,115.0,2026-11-17,2.2,Clinic-B,3.2,74.0,True,94.7,16215.0,48,0.0
+BATCH-162,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-B,156.0,115.0,2027-06-06,1.6,Clinic-E,2.0,128.0,True,95.6,17940.0,249,0.0
+BATCH-163,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,63.0,385.0,2026-10-20,0.6,Clinic-E,4.5,145.0,True,93.7,24255.0,20,24255.0
+BATCH-164,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-C,72.0,295.0,2026-10-19,1.8,Clinic-E,4.9,95.0,True,98.0,21240.0,19,21240.0
+BATCH-165,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,196.0,385.0,2026-12-19,1.1,Clinic-B,2.1,38.0,True,90.5,75460.0,80,0.0
+BATCH-166,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,125.0,385.0,2026-10-21,0.7,Clinic-B,6.8,128.0,True,95.7,48125.0,21,48125.0
+BATCH-167,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,59.0,42.0,2026-12-17,2.9,Clinic-B,2.5,38.0,False,91.1,2478.0,78,0.0
+BATCH-168,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-A,126.0,32.5,2026-12-28,2.0,Clinic-D,4.1,92.0,False,88.8,4095.0,89,0.0
+BATCH-169,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-A,226.0,310.0,2027-05-31,1.8,Clinic-D,3.5,92.0,True,97.8,70060.0,243,0.0
+BATCH-170,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-E,159.0,295.0,2026-11-04,2.6,Clinic-D,2.0,65.0,True,92.2,46905.0,35,46905.0
+BATCH-171,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-A,89.0,165.0,2026-11-10,0.9,Clinic-E,0.0,145.0,True,79.5,14685.0,41,14685.0
+BATCH-172,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-E,181.0,42.0,2026-12-22,1.7,Clinic-D,4.6,65.0,False,96.3,7602.0,83,0.0
+BATCH-173,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-C,112.0,420.0,2026-10-20,1.4,Clinic-E,4.5,95.0,True,92.2,47040.0,20,47040.0
+BATCH-174,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-B,83.0,295.0,2026-10-14,0.9,Clinic-E,5.4,128.0,True,99.0,24485.0,14,24485.0
+BATCH-175,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,92.0,450.0,2026-10-29,1.2,Clinic-C,6.0,58.0,True,97.5,41400.0,29,41400.0
+BATCH-176,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,91.0,165.0,2026-10-13,1.5,Clinic-A,4.2,92.0,True,96.7,15015.0,13,15015.0
+BATCH-177,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-E,170.0,165.0,2026-12-17,1.8,Clinic-C,4.1,95.0,True,90.7,28050.0,78,0.0
+BATCH-178,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-B,50.0,42.0,2027-03-19,3.4,Clinic-A,3.4,24.0,False,96.9,2100.0,170,0.0
+BATCH-179,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-B,137.0,310.0,2026-10-24,1.3,Clinic-E,4.1,128.0,True,92.8,42470.0,24,42470.0
+BATCH-180,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-C,33.0,310.0,2026-11-19,2.8,Clinic-B,2.4,38.0,True,88.5,10230.0,50,0.0
+BATCH-181,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,193.0,385.0,2026-11-08,3.2,Clinic-C,3.5,95.0,True,96.7,74305.0,39,74305.0
+BATCH-182,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-C,77.0,32.5,2026-11-21,3.4,Clinic-E,2.8,95.0,False,96.6,2502.5,52,0.0
+BATCH-183,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-A,191.0,420.0,2026-12-06,2.7,Clinic-E,2.5,145.0,True,96.1,80220.0,67,0.0
+BATCH-184,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-A,93.0,42.0,2026-10-30,1.4,Clinic-C,6.2,58.0,False,93.8,3906.0,30,3906.0
+BATCH-185,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,240.0,450.0,2027-03-15,3.0,Clinic-E,2.1,65.0,True,95.7,108000.0,166,0.0
+BATCH-186,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,180.0,385.0,2027-02-20,2.0,Clinic-A,2.7,145.0,True,91.6,69300.0,143,0.0
+BATCH-187,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-E,97.0,78.5,2026-10-19,1.5,Clinic-A,4.9,145.0,True,92.3,7614.5,19,7614.5
+BATCH-188,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,158.0,42.0,2026-10-13,0.9,Clinic-E,6.2,95.0,False,96.7,6636.0,13,6636.0
+BATCH-189,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-D,68.0,310.0,2026-12-11,3.3,Clinic-A,4.5,92.0,True,88.7,21080.0,72,0.0
+BATCH-190,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-C,107.0,78.5,2026-11-29,2.7,Clinic-D,4.8,46.0,True,93.0,8399.5,60,0.0
+BATCH-191,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-D,140.0,165.0,2026-12-26,2.8,Clinic-A,3.8,92.0,True,88.3,23100.0,87,0.0
+BATCH-192,MED-D04,Adalimumab 40mg/0.8mL Pen,Immunology,Clinic-E,60.0,310.0,2026-10-29,1.3,Clinic-A,,145.0,True,72.8,18600.0,29,18600.0
+BATCH-193,MED-H08,Filgrastim 300mcg/0.5mL Syringe,Hematology,Clinic-C,175.0,165.0,2026-11-08,1.5,Clinic-B,,38.0,True,71.1,28875.0,39,28875.0
+BATCH-194,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-A,156.0,295.0,2026-12-14,1.7,Clinic-C,4.8,58.0,True,96.1,46020.0,75,0.0
+BATCH-195,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-A,81.0,450.0,2026-10-14,0.7,Clinic-E,6.1,145.0,True,98.9,36450.0,14,36450.0
+BATCH-196,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-E,162.0,385.0,2026-11-12,1.9,Clinic-D,4.3,65.0,True,94.3,62370.0,43,62370.0
+BATCH-197,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-B,142.0,385.0,2026-11-18,3.2,Clinic-D,3.5,74.0,True,88.3,54670.0,49,0.0
+BATCH-198,MED-J10,Vancomycin HCl 1g Powder IV,Critical Anti-Infective,Clinic-B,171.0,32.5,2026-10-31,2.0,Clinic-C,2.7,38.0,False,96.4,5557.5,31,5557.5
+BATCH-199,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,157.0,420.0,2026-11-09,3.3,Clinic-A,2.9,92.0,True,95.1,65940.0,40,65940.0
+BATCH-200,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,58.0,115.0,2026-10-23,1.1,Clinic-E,6.7,65.0,True,96.1,6670.0,23,6670.0
+BATCH-201,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-A,107.0,78.5,2027-04-14,3.8,Clinic-D,2.3,92.0,True,98.2,8399.5,196,0.0
+BATCH-202,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,157.0,42.0,2027-04-22,2.7,Clinic-E,1.8,95.0,False,97.6,6594.0,204,0.0
+BATCH-203,MED-G07,"Epoetin Alfa 10,000 U/mL",Hematology,Clinic-D,81.0,115.0,2027-06-25,2.9,Clinic-C,1.6,46.0,True,97.8,9315.0,268,0.0
+BATCH-204,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-C,118.0,385.0,2027-04-05,4.0,Clinic-E,3.0,95.0,True,96.5,45430.0,187,0.0
+BATCH-205,MED-C03,Insulin Glargine 300U/mL Solostar,Endocrine,Clinic-D,82.0,78.5,2026-10-24,1.8,Clinic-A,6.5,92.0,True,95.5,6437.0,24,6437.0
+BATCH-206,MED-I09,Rituximab 500mg/50mL Concentrate,Oncology,Clinic-D,242.0,450.0,2027-04-12,3.1,Clinic-A,1.4,92.0,True,94.7,108900.0,194,0.0
+BATCH-207,MED-E05,Meropenem IV 1000mg Vial,Critical Anti-Infective,Clinic-C,114.0,42.0,2026-12-24,3.1,Clinic-E,4.6,95.0,False,91.8,4788.0,85,0.0
+BATCH-208,MED-F06,Infliximab Infusion 100mg,Immunology,Clinic-D,191.0,295.0,2026-11-15,2.7,Clinic-A,2.9,92.0,True,90.3,56345.0,46,0.0
+BATCH-209,MED-B02,Trastuzumab Monoclonal 440mg,Oncology,Clinic-D,243.0,420.0,2027-06-27,1.8,Clinic-A,1.4,92.0,True,93.0,102060.0,270,0.0
+BATCH-210,MED-A01,Pembrolizumab Biosimilar 100mg/4mL,Oncology,Clinic-A,111.0,385.0,2027-03-14,2.4,Clinic-D,1.4,92.0,True,95.3,42735.0,165,0.0

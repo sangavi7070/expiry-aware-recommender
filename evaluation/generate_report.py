@@ -6,7 +6,7 @@ evaluates edge cases, outputs metrics diffs, and saves evaluation_report.json an
 import sys
 import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Add backend directory to sys.path
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -70,7 +70,7 @@ def generate_cli_report():
         md_file = eval_dir / "evaluation_report.md"
         with open(md_file, "w") as f:
             f.write("# ExpiryAware Evaluation Report\n\n")
-            f.write(f"Generated on: {datetime.utcnow().isoformat()} UTC\n\n")
+            f.write(f"Generated on: {datetime.now(timezone.utc).isoformat()} UTC\n\n")
             f.write("## 1. Measurable Experiment Comparison\n\n")
             f.write("| Metric | Baseline (FIFO) | Target | Measured (ExpiryAware) | Difference |\n")
             f.write("| :--- | :---: | :---: | :---: | :---: |\n")

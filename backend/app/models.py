@@ -1,8 +1,13 @@
 """SQLAlchemy database models for ExpiryAware."""
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy import Column, String, Float, Integer, Boolean, DateTime, Text, ForeignKey
 from sqlalchemy.orm import relationship
 from .database import Base
+
+
+def utc_now():
+    """Return timezone-aware UTC timestamp stripped of tzinfo for clean SQLite datetime storage."""
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 class InventoryBatch(Base):
@@ -23,7 +28,7 @@ class InventoryBatch(Base):
     transfer_distance_km = Column(Float, nullable=True)
     temperature_sensitive = Column(Boolean, default=False)
     data_quality_score = Column(Float, default=100.0)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
     # Relationships
     recommendations = relationship("Recommendation", back_populates="batch", cascade="all, delete-orphan")
@@ -55,8 +60,8 @@ class Recommendation(Base):
     status = Column(String, index=True, default="PENDING")  # PENDING, APPROVED, REJECTED, OVERRIDDEN, BLOCKED, WARNING
     explanation = Column(Text, nullable=False)
     evidence_json = Column(Text, nullable=False)  # Serialized evidence and rule triggers
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
+    updated_at = Column(DateTime, default=utc_now, onupdate=utc_now)
 
     batch = relationship("InventoryBatch", back_populates="recommendations")
 
@@ -72,4 +77,4 @@ class AuditLog(Base):
     user_role = Column(String, nullable=False)  # Pharmacist, Inventory Manager, Clinic Administrator, Clinical Lead
     reason = Column(String, nullable=False)
     notes = Column(Text, nullable=True)
-    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
+    timestamp = Column(DateTime, default=utc_now, index=True)

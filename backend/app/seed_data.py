@@ -6,7 +6,7 @@ All medicine codes, clinic names, and clinical identifiers are entirely syntheti
 import os
 import json
 import random
-from datetime import date, timedelta, datetime
+from datetime import date, timedelta, datetime, timezone
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -481,7 +481,7 @@ def populate_database(db, reference_date: date = None):
             user_role="Pharmacist",
             reason="Verified surplus against oncology clinic schedule.",
             notes="Expedited courier scheduled for cold-chain transit at 09:00.",
-            timestamp=datetime.utcnow() - timedelta(hours=3),
+            timestamp=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(hours=3),
         ),
         AuditLog(
             audit_id="AUD-002",
@@ -491,7 +491,7 @@ def populate_database(db, reference_date: date = None):
             user_role="Inventory Manager",
             reason="Stock already allocated",
             notes="15 units reserved for scheduled pediatric outpatient infusion.",
-            timestamp=datetime.utcnow() - timedelta(hours=2),
+            timestamp=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(hours=2),
         ),
         AuditLog(
             audit_id="AUD-003",
@@ -501,7 +501,7 @@ def populate_database(db, reference_date: date = None):
             user_role="Clinic Administrator",
             reason="Transfer not feasible",
             notes="Transit vehicle refrigeration maintenance scheduled today.",
-            timestamp=datetime.utcnow() - timedelta(hours=1),
+            timestamp=datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(hours=1),
         ),
     ]
     for aud in initial_audits:

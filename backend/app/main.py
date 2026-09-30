@@ -5,7 +5,8 @@ explainable recommendations, human approvals, audit logs, data quality, and eval
 """
 import json
 import logging
-from datetime import datetime, date
+from contextlib import asynccontextmanager
+from datetime import datetime, date, timezone
 from typing import Optional, List
 from fastapi import FastAPI, Depends, HTTPException, status, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,10 +33,21 @@ from .evaluation import run_evaluation_simulation
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("expiry_aware")
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Ensure database is created and seeded on server launch."""
+    logger.info("Initializing database...")
+    init_db(seed_if_empty=True)
+    logger.info("Database initialized successfully.")
+    yield
+
+
 app = FastAPI(
     title="ExpiryAware API",
     description="Responsible inventory intelligence and stock redistribution recommender for specialty medicines.",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 # Enable CORS for local Vite development
@@ -46,14 +58,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-@app.on_event("startup")
-def on_startup():
-    """Ensure database is created and seeded on server launch."""
-    logger.info("Initializing database...")
-    init_db(seed_if_empty=True)
-    logger.info("Database initialized successfully.")
 
 
 # ---------------------------------------------------------------------------
@@ -70,7 +74,7 @@ def health_check(db: Session = Depends(get_db)):
             "version": "1.0.0",
             "database": "connected",
             "batch_count": count,
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.now(timezone.utc).isoformat()
         }
     except Exception as exc:
         logger.error(f"Health check database failure: {exc}")
@@ -78,7 +82,7 @@ def health_check(db: Session = Depends(get_db)):
             "status": "degraded",
             "service": "ExpiryAware Recommender",
             "error": str(exc),
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.now(timezone.utc).isoformat()
         }
 
 
@@ -94,7 +98,7 @@ def seed_demo_data(db: Session = Depends(get_db)):
         return {
             "success": True,
             "message": "Demo data successfully reset to deterministic baseline.",
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.now(timezone.utc).isoformat()
         }
     except Exception as exc:
         logger.error(f"Failed to reset demo data: {exc}")
@@ -482,10 +486,11 @@ def approve_recommendation(recommendation_id: str, req: ActionRequest, db: Sessi
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Blocked recommendations cannot be approved.")
 
     rec.status = "APPROVED"
-    rec.updated_at = datetime.utcnow()
+    now_utc = datetime.now(timezone.utc).replace(tzinfo=None)
+    rec.updated_at = now_utc
 
     # Create audit log entry
-    audit_id = f"AUD-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
+    audit_id = f"AUD-{now_utc.strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
     audit_entry = AuditLog(
         audit_id=audit_id,
         recommendation_id=rec.recommendation_id,
@@ -494,7 +499,7 @@ def approve_recommendation(recommendation_id: str, req: ActionRequest, db: Sessi
         user_role=req.user_role,
         reason=req.reason or "Clinical confirmation verified.",
         notes=req.notes,
-        timestamp=datetime.utcnow(),
+        timestamp=now_utc,
     )
     db.add(audit_entry)
     db.commit()
@@ -510,10 +515,11 @@ def reject_recommendation(recommendation_id: str, req: ActionRequest, db: Sessio
     if not rec:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Recommendation '{recommendation_id}' not found.")
 
+    now_utc = datetime.now(timezone.utc).replace(tzinfo=None)
     rec.status = "REJECTED"
-    rec.updated_at = datetime.utcnow()
+    rec.updated_at = now_utc
 
-    audit_id = f"AUD-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
+    audit_id = f"AUD-{now_utc.strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
     audit_entry = AuditLog(
         audit_id=audit_id,
         recommendation_id=rec.recommendation_id,
@@ -522,7 +528,7 @@ def reject_recommendation(recommendation_id: str, req: ActionRequest, db: Sessio
         user_role=req.user_role,
         reason=req.reason or "Clinical rejection.",
         notes=req.notes,
-        timestamp=datetime.utcnow(),
+        timestamp=now_utc,
     )
     db.add(audit_entry)
     db.commit()
@@ -574,10 +580,11 @@ def override_recommendation(recommendation_id: str, req: OverrideRequest, db: Se
     if not rec:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Recommendation '{recommendation_id}' not found.")
 
+    now_utc = datetime.now(timezone.utc).replace(tzinfo=None)
     rec.status = "OVERRIDDEN"
-    rec.updated_at = datetime.utcnow()
+    rec.updated_at = now_utc
 
-    audit_id = f"AUD-{datetime.utcnow().strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
+    audit_id = f"AUD-{now_utc.strftime('%Y%m%d%H%M%S')}-{rec.batch_id}"
     audit_entry = AuditLog(
         audit_id=audit_id,
         recommendation_id=rec.recommendation_id,
@@ -586,7 +593,7 @@ def override_recommendation(recommendation_id: str, req: OverrideRequest, db: Se
         user_role=req.user_role,
         reason=req.reason,
         notes=req.notes,
-        timestamp=datetime.utcnow(),
+        timestamp=now_utc,
     )
     db.add(audit_entry)
     db.commit()
